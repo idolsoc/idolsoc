@@ -77,6 +77,38 @@ function searchTable() {
     }
 };
 
+function displayChoice() {
+
+    const songName = document.getElementById('song-name');
+    const songURL = document.getElementById('song-url');
+    const searchInput = document.getElementById('input');
+
+    //songName.innerHTML = searchInput.value;
+
+
+    if (searchInput != null) {
+        const searchTable = document.getElementById('sheet');
+        const rows = searchTable.querySelectorAll('tr');
+
+        searchInput.addEventListener('input', function (e) {
+            const q = e.target.value.toLowerCase();
+
+            rows.forEach(row => {
+                const cells = Array.from(row.querySelectorAll('td'));
+                const matchString = cells.map((n) => n.textContent.toLowerCase()).join(' ');
+                const isMatch = matchString.includes(q);
+                row.classList.toggle("hide", !isMatch);
+            });
+        });
+        
+        songName.textContent = searchInput.value;
+        
+    }
+    const cols = searchTable.querySelectorAll('td');
+
+    songURL.textContent = cols[3].value;
+};
+
 function addSong() {
     var table = document.getElementById("list");
 
