@@ -78,17 +78,6 @@ a:hover {
   color:rgb(190, 181, 251);
 }
 
-@keyframes fadeInUp {
-  from {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 iframe {
   display: inline-block;
   border-style: none;
@@ -110,6 +99,23 @@ iframe {
   @media only screen and (max-width: 600px) {
     width: 85%;
   }
+}
+
+.div-form {
+  border-style: solid;
+  border-color: #ffffff;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 20px;
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  background-color: #8c86c39e;
+  animation: 2s both fadeInUp;
+  @media only screen and (max-width: 600px) {
+    width: 85%;
+  }
+  display: none;
 }
 
 table {
@@ -141,7 +147,6 @@ td {
 button {
   background-color: #270092;
   text-align: center;
-  display: block;
   color: white;
   padding: 10px 20px;
   border: none;
