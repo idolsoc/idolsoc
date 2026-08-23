@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>idol list</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scaleable=no" />
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html" class="navbar">home</a>
+        <a href="members.html" class="navbar">members</a>
+        <a href="song database.html" class="navbar">songs</a>
+        <a href="spreadsheet.html" class="navbar">sheet</a>
+
+    </div>
+
+
+    <h1 style="text-align:center;">Song Archive</h1>
+
+    <input class="input-field" type="text" id="search-input" placeholder="search table..." oninput="searchTable()" />
+
+    <button class="collapse" type="button">add new song</button>
+
+    <div class="normal">
+        <h3>add new song</h3>
+        <form action="https://api.sheetmonkey.io/form/PG6ApbAA1uv7yFCvJCKXZ" method="post" class="form">
+            <label>group: <input type="text" name="Group" required /></label>
+            <label>song name: <input type="text" name="Song Name" required /></label>
+            <label>member number: <input type="text" name="Members" required /></label>
+            <label>URL: <input type="text" name="URL" required /></label>
+            <label>category: <input type="text" name="Category" required /></label>
+            <label>type: <input type="text" name="Type" required /></label>
+            <label>release year: <input type="text" name="Year of Release" required /></label>
+            <label>tags: <input type="text" name="Tags" required /></label>
+
+            <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+            <input type="submit" value="Submit" />
+        </form>
+
+    </div>
+
+    <button type="button" id="make-link" onclick="makeLink()">make link</button>
+
+    <table id="sheet" class="searchable sortable">
+         <thead>
+            <tr>
+                <th>Group</th>
+                <th>Song Name</th>
+                <th>Members</th>
+                <th>URL</th>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Year of Release</th>
+                <th>Tags</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

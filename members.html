@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>idol list</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scaleable=no" />
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+
+    <body>
+        <div class="navbar">
+            <a href="index.html" class="navbar">home</a>
+            <a href="members.html" class="navbar">members</a>
+            <a href="song database.html" class="navbar">songs</a>
+            <a href="spreadsheet.html" class="navbar">sheet</a>
+        </div>
+
+        <h1>members</h1>
+
+        <div class="normal">
+            <table id="members">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Here?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kai</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Veronica</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Alex</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Yinka</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Ruby</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Ryan</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <input type="button" value="submit" id="submit" onclick="GetSelected()"/>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

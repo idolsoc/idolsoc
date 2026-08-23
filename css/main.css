@@ -1,0 +1,181 @@
+body {
+    background-color: #03013e;
+    background-repeat: repeat;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0%;
+}
+
+h1 {
+  color: #d6b3ec;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 270%;
+  @media only screen and (max-width: 600px) {
+    font-size: 180%;
+  }
+}
+
+h2 {
+  color: #c494d0;
+  text-align: center;
+}
+
+h3 {
+  color: #d8d5ff;
+  text-align: center;
+  font-weight: bold;
+}
+
+p {
+  color: #ffffff;
+  display: inline-block;
+  text-align: center;
+}
+
+ul {
+  color: #ffffff;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 2%;
+}
+
+a {
+  color: #ffffff;
+  display: inline-block;
+  align-items: center;
+  padding-bottom: 1%;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color:rgba(213, 162, 226, 0.708);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+} 
+
+a.navbar {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  @media only screen and (max-width: 600px) {
+    padding: 4px 6px;
+  }
+}
+
+a.navbar:hover {
+  color: #ffffff;
+  background-color: #4b42ce71;
+}
+
+
+a:hover {
+  color:rgb(190, 181, 251);
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+iframe {
+  display: inline-block;
+  border-style: none;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.normal{
+  border-style: solid;
+  border-color: #ffffff;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 20px;
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  background-color: #8c86c39e;
+  animation: 2s both fadeInUp;
+  @media only screen and (max-width: 600px) {
+    width: 85%;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+}
+
+td {
+  color: #ffffff;
+  word-wrap: break-word;
+}
+
+
+.hide {
+  display: none;
+}
+
+.input-field {
+  width: 50%;
+  padding: 10px;
+  margin: 10px auto;
+  display: block;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #270092;
+  text-align: center;
+  display: block;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
