@@ -17,6 +17,14 @@ function getMembers() {
 };
 
 
+function getSubstring(string, char1, char2) {
+  return string.slice(
+    string.indexOf(char1) + 1,
+    string.lastIndexOf(char2),
+  );
+}
+
+
 // Replace with your actual Spreadsheet ID
 const spreadsheetId = '15WGUqz6w3TpvfbFM_U87ZX7vNfu8GUzB8urGdOIzQW0';
 
@@ -115,9 +123,22 @@ function displayChoice() {
             }
         }
 
+
+    
+
     const thumbnailContainer = document.getElementById('song-container');
 
-    const videoId = songURL.textContent.split('v=')[1];
+    let videoId = '';
+
+    if (songURL.textContent.indexOf('&') > -1) {
+
+        videoId = getSubstring(songURL.textContent, 'v=', '&');
+    }
+    else {
+
+        videoId = songURL.textContent.split('v=')[1];
+    }
+
     const thumbnailURL = `http://img.youtube.com/vi/${videoId}/0.jpg`;
 
     document.getElementById('song-image').src = thumbnailURL;

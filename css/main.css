@@ -78,11 +78,11 @@ a:hover {
   color:rgb(190, 181, 251);
 }
 
-iframe {
-  display: inline-block;
-  border-style: none;
-  min-width: 100%;
-  min-height: 100%;
+
+.song-image {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
 }
 
 .normal{
@@ -91,10 +91,12 @@ iframe {
   padding-left: 8px;
   padding-right: 8px;
   padding-bottom: 20px;
-  width: 30%;
+  width: 50%;
   margin: auto;
   text-align: center;
+  display: block;
   background-color: #8c86c39e;
+  justify-content: center;
   animation: 2s both fadeInUp;
   @media only screen and (max-width: 600px) {
     width: 85%;
@@ -107,7 +109,7 @@ iframe {
   padding-left: 8px;
   padding-right: 8px;
   padding-bottom: 20px;
-  width: 30%;
+  width: 50%;
   margin: auto;
   text-align: center;
   background-color: #8c86c39e;
@@ -203,15 +205,5 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
-.main-page {
-  display: block;
-}
 
-.song-image {
-  display: block;
-  margin: auto;
-  max-width: 90%;
-  height: auto;
-  border-radius: 5px;
-  align-items: center;
-}
+
