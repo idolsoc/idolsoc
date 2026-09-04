@@ -1,4 +1,5 @@
 membersSelected = new Array();
+shuffledMems = new Array();
 
 function getMembers() {
 
@@ -114,9 +115,15 @@ function displayChoice() {
             }
         }
 
-    }
+    const thumbnailContainer = document.getElementById('song-container');
 
-};
+    const videoId = songURL.textContent.split('v=')[1];
+    const thumbnailURL = `http://img.youtube.com/vi/${videoId}/0.jpg`;
+
+    document.getElementById('song-image').src = thumbnailURL;
+    document.getElementById('song-image').style.display = 'block';
+}
+
 
 function addSong() {
     var table = document.getElementById("list");
@@ -211,9 +218,13 @@ function randomizeMembers() {
     const memTab = document.getElementById("member-table");
     const rows = memTab.querySelectorAll("tr");
 
+    const memberName = document.getElementById("member-name");
+
     const mems = JSON.parse(localStorage.getItem("membersSelected"));
 
-    const shuffledMems = shuffle(mems);
+    localStorage.setItem("shuffledMems", JSON.stringify(shuffle(mems)));
+
+    const shuffledMems = JSON.parse(localStorage.getItem("shuffledMems"));
      
     for (let i = 0; i < mems.length; i++) {
 
@@ -222,6 +233,8 @@ function randomizeMembers() {
 
         newCell.textContent = shuffledMems[i];   
     }
+
+    memberName.textContent = shuffledMems[0];
     
 }
 
@@ -233,3 +246,50 @@ function clearMembers() {
 }
 
 
+let currentInt = 0;
+
+function getSong() {
+    const searchInput = document.getElementById('input');
+    const songName = document.getElementById('song-name');
+    const songURL = document.getElementById('song-url');
+
+    const memTable = document.getElementById("member-table");
+
+    const memberName = document.getElementById("member-name");
+
+    const shuffledMems = JSON.parse(localStorage.getItem("shuffledMems"));
+
+    console.log("Current Int before: " + currentInt);
+
+    const rows = memTable.querySelectorAll('tr');
+
+    for (var i = 0, row; row = memTable.rows[i]; i++) {
+        if (row.cells[0].textContent.toLowerCase() === memberName.textContent.toLowerCase()) {
+            const newCell = row.insertCell(1);
+            newCell.innerHTML = "<a href='" + songURL.textContent + "'>" + songName.textContent + "</a>";
+        }
+    }
+
+    currentInt++;
+    memberName.textContent = shuffledMems[currentInt];
+    console.log("Current Int after: " + currentInt);
+    
+}
+
+function openLinks() {
+    const memTable = document.getElementById("member-table");
+    const rows = memTable.querySelectorAll('tr');
+
+    for (var i = 0, row; row = memTable.rows[i]; i++) {
+        if (row.cells[1]) {
+            const link = row.cells[1].querySelector('a');
+            if (link) {
+                window.open(link.href, '_blank');
+            }
+        }
+    }
+}
+
+
+
+}

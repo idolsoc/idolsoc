@@ -19,16 +19,17 @@
         <h1>enter choice</h1>
 
         <div class="normal">
-            <h2>name</h2>
+            <h2 id="member-name">name</h2>
             <label for="input">enter song name:</label><br>
             <input type="text" class="input-field" id="input" placeholder="choose song..." name="song"  oninput="displayChoice()"><br>
 
-            <input type="button" value="submit" id="submit-song" onclick="GetSong()"/>
+            <input class="button" type="button" value="submit" id="submit-song" onclick="getSong()"/>
         </div>
 
         <div class="normal">
             <h2 id="song-name"></h2>
             <a href="" id="song-url"></a>
+            <img id="song-image" src="">
         </div>
 
         <div class="normal">
@@ -45,6 +46,9 @@
             <tbody>
             </tbody>
         </table>
+
+        <button class="button" type="button" onclick="openLinks()">open links</button>
+        
         </div>
 
 

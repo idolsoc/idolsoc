@@ -154,6 +154,14 @@ button {
   cursor: pointer;
 }
 
+.button:hover {
+  background-color: #4b42ce71;
+}
+
+.button:visited {
+  background-color: #0b002a;
+}
+
 .button {
   background-color: #270092;
   text-align: center;
@@ -197,4 +205,13 @@ input[type=submit]:hover {
 
 .main-page {
   display: block;
+}
+
+.song-image {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  height: auto;
+  border-radius: 5px;
+  align-items: center;
 }
