@@ -13,7 +13,7 @@ function getMembers() {
         }
     }
 
-    localStorage.setItem("membersSelected", JSON.stringify(mems));
+    sessionStorage.setItem("membersSelected", JSON.stringify(mems));
 };
 
 
@@ -123,8 +123,6 @@ function displayChoice() {
         }
 
 
-
-
         const thumbnailContainer = document.getElementById('song-container');
 
         let videoId = '';
@@ -143,6 +141,9 @@ function displayChoice() {
         document.getElementById('song-image').src = thumbnailURL;
         document.getElementById('song-image').style.display = 'block';
     };
+
+    var htmlContents = document.documentElement.innerHTML;
+    sessionStorage.setItem('page', JSON.stringify(htmlContents ));
 }
 
 function addSong() {
@@ -237,11 +238,11 @@ function randomizeMembers() {
 
     const memberName = document.getElementById("member-name");
 
-    const mems = JSON.parse(localStorage.getItem("membersSelected"));
+    const mems = JSON.parse(sessionStorage.getItem("membersSelected"));
 
-    localStorage.setItem("shuffledMems", JSON.stringify(shuffle(mems)));
+    sessionStorage.setItem("shuffledMems", JSON.stringify(shuffle(mems)));
 
-    const shuffledMems = JSON.parse(localStorage.getItem("shuffledMems"));
+    const shuffledMems = JSON.parse(sessionStorage.getItem("shuffledMems"));
 
     for (let i = 0; i < mems.length; i++) {
 
@@ -257,9 +258,9 @@ function randomizeMembers() {
 
 function clearMembers() {
 
-    localStorage.clear();
+    sessionStorage.clear();
 
-    console.log("Local Storage Cleared");
+    console.log("Session Storage Cleared");
 }
 
 
@@ -274,7 +275,7 @@ function getSong() {
 
     const memberName = document.getElementById("member-name");
 
-    const shuffledMems = JSON.parse(localStorage.getItem("shuffledMems"));
+    const shuffledMems = JSON.parse(sessionStorage.getItem("shuffledMems"));
 
     console.log("Current Int before: " + currentInt);
 
