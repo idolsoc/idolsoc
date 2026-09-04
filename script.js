@@ -1,16 +1,18 @@
 membersSelected = new Array();
 
-function GetSelected() {
+function getMembers() {
 
-    var table = document.getElementById("members");
+    mems = new Array();
 
-    var chks = table.getElementsByTagName("Here?");
+    var checks = document.querySelectorAll("input[type='checkbox']");
 
-    for (var i = 0; i < chks.length; i++) {
-        if (chks[i].checked) {
-            membersSelected.push(chks[i].value);
+    for (var i = 0; i < checks.length; i++) {
+        if (checks[i].checked) {
+            mems.push(checks[i].value);
         }
     }
+
+    localStorage.setItem("membersSelected", JSON.stringify(mems));
 };
 
 
@@ -167,6 +169,8 @@ function makeLink() {
 
 };
 
+//collapse func
+
 var coll = document.getElementsByClassName("collapse");
 var i;
 
@@ -182,5 +186,50 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
+//end collapse func
 
-//to store data use local storage -> need to google this
+function shuffle(array) {
+
+    let currentIndex = array.length;
+    while (currentIndex !== 0) {
+        // Pick a remaining element
+        let randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element
+        let temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+
+    }
+
+    return array;
+}
+
+function randomizeMembers() {
+
+    const memTab = document.getElementById("member-table");
+    const rows = memTab.querySelectorAll("tr");
+
+    const mems = JSON.parse(localStorage.getItem("membersSelected"));
+
+    const shuffledMems = shuffle(mems);
+     
+    for (let i = 0; i < mems.length; i++) {
+
+        const newRow = memTab.insertRow(-1);
+        const newCell = newRow.insertCell(0);
+
+        newCell.textContent = shuffledMems[i];   
+    }
+    
+}
+
+function clearMembers() {
+
+    localStorage.clear();
+
+    console.log("Local Storage Cleared");
+}
+
+

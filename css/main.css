@@ -154,6 +154,16 @@ button {
   cursor: pointer;
 }
 
+.button {
+  background-color: #270092;
+  text-align: center;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .form {
   border-radius: 5px;
   background-color: #f2f2f2;

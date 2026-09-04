@@ -18,42 +18,24 @@
         <h1>members</h1>
 
         <div class="normal">
-            <table id="members">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Here?</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Kai</td>
-                        <td><input type="checkbox" /></td>
-                    </tr>
-                    <tr>
-                        <td>Veronica</td>
-                        <td><input type="checkbox" /></td>
-                    </tr>
-                    <tr>
-                        <td>Alex</td>
-                        <td><input type="checkbox" /></td>
-                    </tr>
-                    <tr>
-                        <td>Yinka</td>
-                        <td><input type="checkbox" /></td>
-                    </tr>
-                    <tr>
-                        <td>Ruby</td>
-                        <td><input type="checkbox" /></td>
-                    </tr>
-                    <tr>
-                        <td>Ryan</td>
-                        <td><input type="checkbox" /></td>
-                    </tr>
-                </tbody>
-            </table>
+            
+            <h2>choose members</h2>
+            <input type="checkbox" id="member1" value="Kai" autocomplete="off"/>
+            <label for="member1">Kai</label><br/>
+            <input type="checkbox" id="member2" value="Veronica" autocomplete="off"/>
+            <label for="member2">Veronica</label><br/>
+            <input type="checkbox" id="member3" value="Alex" autocomplete="off"/>
+            <label for="member3">Alex</label><br/>
+            <input type="checkbox" id="member4" value="Yinka" autocomplete="off"/>
+            <label for="member4">Yinka</label><br/>
+            <input type="checkbox" id="member5" value="Ruby" autocomplete="off"/>
+            <label for="member5">Ruby</label><br/>
+            <input type="checkbox" id="member6" value="Ryan" autocomplete="off"/>
+            <label for="member6">Ryan</label><br/>
 
-            <input type="button" value="submit" id="submit" onclick="GetSelected()"/>
+            <input class="button" type="button" value="submit" id="submit" onclick="getMembers()"/>
+
+            <input class="button" type="button" value="clear" id="clear" onclick="clearMembers()"/>
         </div>
 
         <script src="script.js"></script>
