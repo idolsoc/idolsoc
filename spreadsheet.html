@@ -39,9 +39,9 @@
 
     <input class="input-field" type="text" id="search-input" placeholder="search table..." oninput="searchTable()" />
 
-    <button class="collapse" type="button">add new song</button>
+    <button class="button" id="collapse" type="button" onclick="toggleForm()">add new song</button>
 
-    <div class="div-form">
+    <div class="div-form" id="song-form">
         <h3>add new song</h3>
         <form action="https://api.sheetmonkey.io/form/PG6ApbAA1uv7yFCvJCKXZ" method="post" class="form">
             <label>group: <input type="text" name="Group" required /></label>
@@ -59,7 +59,7 @@
 
     </div>
 
-    <button type="button" id="make-link" onclick="makeLink()">make link</button>
+    <button class="button" type="button" id="make-link" onclick="makeLink()">make link</button>
 
     <table id="sheet" class="searchable sortable">
          <thead>

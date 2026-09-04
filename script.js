@@ -18,11 +18,11 @@ function getMembers() {
 
 
 function getSubstring(string, char1, char2) {
-  return string.slice(
-    string.indexOf(char1) + 1,
-    string.lastIndexOf(char2),
-  );
-}
+    return string.slice(
+        string.indexOf(char1) + 1,
+        string.lastIndexOf(char2),
+    );
+};
 
 
 // Replace with your actual Spreadsheet ID
@@ -39,7 +39,7 @@ async function fetchGoogleSheetData() {
         // Fetch data from Google Sheets API
         const response = await fetch(url);
         const data = await response.json();
-        
+
         // Extract rows from the data
         const rows = data.values;
 
@@ -49,14 +49,14 @@ async function fetchGoogleSheetData() {
         // Loop through the rows (starting from row 1 to skip headers)
         for (let i = 1; i < rows?.length ?? 0; i++) {
             const row = document.createElement('tr');
-            
+
             // Loop through each cell in the row and create a table cell for each
             rows[i].forEach(cell => {
                 const cellElement = document.createElement('td');
                 cellElement.textContent = cell;
                 row.appendChild(cellElement);
             });
-            
+
             // Append the row to the table
             tableBody.appendChild(row);
         }
@@ -108,43 +108,42 @@ function displayChoice() {
                 row.classList.toggle("hide", !isMatch);
             });
         });
-        
+
         for (var i = 0, row; row = searchTable.rows[i]; i++) {
             if (row.cells[1].textContent.toLowerCase() === searchInput.value.toLowerCase()) {
                 songName.textContent = row.cells[1].textContent;
                 console.log(row.cells[1].textContent);
                 for (var j = 0, col; col = row.cells[j]; j++) {
-                    if (j === 3)
-                    {
-                    songURL.innerHTML = "<a href='" + row.cells[3].textContent + "'>" + row.cells[3].textContent + "</a>";
-                    console.log(row.cells[3].textContent);
+                    if (j === 3) {
+                        songURL.innerHTML = "<a href='" + row.cells[3].textContent + "'>" + row.cells[3].textContent + "</a>";
+                        console.log(row.cells[3].textContent);
                     }
                 }
             }
         }
 
 
-    
 
-    const thumbnailContainer = document.getElementById('song-container');
 
-    let videoId = '';
+        const thumbnailContainer = document.getElementById('song-container');
 
-    if (songURL.textContent.indexOf('&') > -1) {
+        let videoId = '';
 
-        videoId = getSubstring(songURL.textContent, 'v=', '&');
-    }
-    else {
+        if (songURL.textContent.indexOf('&') > -1) {
 
-        videoId = songURL.textContent.split('v=')[1];
-    }
+            videoId = getSubstring(songURL.textContent, 'v=', '&');
+        }
+        else {
 
-    const thumbnailURL = `http://img.youtube.com/vi/${videoId}/0.jpg`;
+            videoId = songURL.textContent.split('v=')[1];
+        }
 
-    document.getElementById('song-image').src = thumbnailURL;
-    document.getElementById('song-image').style.display = 'block';
+        const thumbnailURL = `http://img.youtube.com/vi/${videoId}/0.jpg`;
+
+        document.getElementById('song-image').src = thumbnailURL;
+        document.getElementById('song-image').style.display = 'block';
+    };
 }
-
 
 function addSong() {
     var table = document.getElementById("list");
@@ -195,26 +194,23 @@ function makeLink() {
         }
     }
 
-};
-
-//collapse func
-
-var coll = document.getElementsByClassName("collapse");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
 }
 
-//end collapse func
+function toggleForm() {
+
+    var coll = document.getElementById("collapse");
+    var content = document.getElementById("song-form");
+
+    content.classList.toggle("active");
+    if (content.style.display === "block") {
+        content.style.display = "none";
+    } else {
+        content.style.display = "block";
+    }
+};
+    
+
+
 
 function shuffle(array) {
 
@@ -246,17 +242,17 @@ function randomizeMembers() {
     localStorage.setItem("shuffledMems", JSON.stringify(shuffle(mems)));
 
     const shuffledMems = JSON.parse(localStorage.getItem("shuffledMems"));
-     
+
     for (let i = 0; i < mems.length; i++) {
 
         const newRow = memTab.insertRow(-1);
         const newCell = newRow.insertCell(0);
 
-        newCell.textContent = shuffledMems[i];   
+        newCell.textContent = shuffledMems[i];
     }
 
     memberName.textContent = shuffledMems[0];
-    
+
 }
 
 function clearMembers() {
@@ -294,7 +290,7 @@ function getSong() {
     currentInt++;
     memberName.textContent = shuffledMems[currentInt];
     console.log("Current Int after: " + currentInt);
-    
+
 }
 
 function openLinks() {
@@ -312,5 +308,3 @@ function openLinks() {
 }
 
 
-
-}
