@@ -83,9 +83,6 @@ function displayChoice() {
     const songURL = document.getElementById('song-url');
     const searchInput = document.getElementById('input');
 
-    //songName.innerHTML = searchInput.value;
-
-
     if (searchInput != null) {
         const searchTable = document.getElementById('sheet');
         const rows = searchTable.querySelectorAll('tr');
@@ -101,12 +98,22 @@ function displayChoice() {
             });
         });
         
-        songName.textContent = searchInput.value;
-        
-    }
-    const cols = searchTable.querySelectorAll('td');
+        for (var i = 0, row; row = searchTable.rows[i]; i++) {
+            if (row.cells[1].textContent.toLowerCase() === searchInput.value.toLowerCase()) {
+                songName.textContent = row.cells[1].textContent;
+                console.log(row.cells[1].textContent);
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (j === 3)
+                    {
+                    songURL.innerHTML = "<a href='" + row.cells[3].textContent + "'>" + row.cells[3].textContent + "</a>";
+                    console.log(row.cells[3].textContent);
+                    }
+                }
+            }
+        }
 
-    songURL.textContent = cols[3].value;
+    }
+
 };
 
 function addSong() {
