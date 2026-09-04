@@ -4,7 +4,14 @@ shuffledMems = new Array();
 
 function loadPage() {
 
-    document.documentElement.innerHTML = JSON.parse(sessionStorage.getItem('page'));
+    const memTab = document.getElementById("member-table");
+
+    if (sessionStorage.getItem('page') === null) {
+        console.log("No page stored in sessionStorage");
+    }
+    else {
+        memTab = sessionStorage.getItem('page');
+    }
 
     console.log("Page Loaded");
 }
@@ -98,9 +105,6 @@ function searchTable() {
 
 function displayChoice() {
 
-    var htmlContents = document.documentElement.innerHTML;
-    sessionStorage.setItem('page', JSON.stringify(htmlContents));
-
     const songName = document.getElementById('song-name');
     const songURL = document.getElementById('song-url');
     const searchInput = document.getElementById('input');
@@ -133,17 +137,14 @@ function displayChoice() {
             }
         }
 
-
         const thumbnailContainer = document.getElementById('song-container');
 
         let videoId = '';
 
         if (songURL.textContent.indexOf('&') > -1) {
-
             videoId = getSubstring(songURL.textContent, 'v=', '&');
         }
         else {
-
             videoId = songURL.textContent.split('v=')[1];
         }
 
@@ -276,6 +277,10 @@ function clearMembers() {
 let currentInt = 0;
 
 function getSong() {
+
+    const memTab = document.getElementById("member-table");    
+    sessionStorage.setItem('page', JSON.stringify(memTab));
+
     const searchInput = document.getElementById('input');
     const songName = document.getElementById('song-name');
     const songURL = document.getElementById('song-url');
@@ -300,7 +305,6 @@ function getSong() {
     currentInt++;
     memberName.textContent = shuffledMems[currentInt];
     console.log("Current Int after: " + currentInt);
-
 }
 
 function openLinks() {

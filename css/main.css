@@ -160,7 +160,7 @@ button {
   background-color: #4b42ce71;
 }
 
-.button:visited {
+.button:focus {
   background-color: #0b002a;
 }
 
