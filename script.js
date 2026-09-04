@@ -1,6 +1,14 @@
 membersSelected = new Array();
 shuffledMems = new Array();
 
+
+function loadPage() {
+
+    document.documentElement.innerHTML = JSON.parse(sessionStorage.getItem('page'));
+
+    console.log("Page Loaded");
+}
+
 function getMembers() {
 
     mems = new Array();
@@ -90,6 +98,9 @@ function searchTable() {
 
 function displayChoice() {
 
+    var htmlContents = document.documentElement.innerHTML;
+    sessionStorage.setItem('page', JSON.stringify(htmlContents));
+
     const songName = document.getElementById('song-name');
     const songURL = document.getElementById('song-url');
     const searchInput = document.getElementById('input');
@@ -142,8 +153,6 @@ function displayChoice() {
         document.getElementById('song-image').style.display = 'block';
     };
 
-    var htmlContents = document.documentElement.innerHTML;
-    sessionStorage.setItem('page', JSON.stringify(htmlContents ));
 }
 
 function addSong() {
@@ -298,7 +307,8 @@ function openLinks() {
     const memTable = document.getElementById("member-table");
     const rows = memTable.querySelectorAll('tr');
 
-    for (var i = 0, row; row = memTable.rows[i]; i++) {
+    for (var i = memTable.rows.length - 1; i >= 0; i--) {
+        const row = memTable.rows[i];
         if (row.cells[1]) {
             const link = row.cells[1].querySelector('a');
             if (link) {
