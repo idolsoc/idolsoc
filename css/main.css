@@ -1,17 +1,25 @@
 @font-face {
-  font-family: 'Starborn';
+  font-family: 'starborn';
   src: url(Starborn.otf);
 }
 
 body {
-    background-color: #03013e;
+    background-color: #adbbff;
     background-repeat: repeat;
-    font-family: 'Starborn';
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0%;
 }
 
+h1, h2, h3 {
+  font-family: starborn;
+}
+
+p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 h1 {
-  color: #d6b3ec;
+  color: #fa334a;
   text-align: center;
   padding-top: 5px;
   font-size: 270%;
@@ -21,24 +29,24 @@ h1 {
 }
 
 h2 {
-  color: #c494d0;
+  color: #f92039;
   text-align: center;
 }
 
 h3 {
-  color: #d8d5ff;
+  color: #fa334a;
   text-align: center;
   font-weight: bold;
 }
 
 p {
-  color: #ffffff;
+  color: #160000;
   display: inline-block;
   text-align: center;
 }
 
 ul {
-  color: #ffffff;
+  color: #230101;
   list-style-position: inside;
   margin: 0;
   padding: 0;
@@ -46,15 +54,16 @@ ul {
 }
 
 a {
-  color: #ffffff;
+  color: #8a323c;
   display: inline-block;
   align-items: center;
   padding-bottom: 1%;
 }
 
 .navbar {
+  font-family: starborn;
   overflow: hidden;
-  background-color:rgba(213, 162, 226, 0.708);
+  background-color:#819af4;
   position: sticky;
   top: 0;
   z-index: 5;
@@ -80,7 +89,7 @@ a.navbar:hover {
 
 
 a:hover {
-  color:rgb(190, 181, 251);
+  color:#819af4;
 }
 
 
@@ -100,7 +109,7 @@ a:hover {
   margin: auto;
   text-align: center;
   display: block;
-  background-color: #8c86c39e;
+  background-color: #819af4;
   justify-content: center;
   animation: 2s both fadeInUp;
   @media only screen and (max-width: 600px) {
@@ -117,7 +126,7 @@ a:hover {
   width: 50%;
   margin: auto;
   text-align: center;
-  background-color: #8c86c39e;
+  background-color: #819af4;
   animation: 2s both fadeInUp;
   @media only screen and (max-width: 600px) {
     width: 85%;
@@ -132,7 +141,7 @@ table {
 }
 
 td {
-  color: #ffffff;
+  color: #000000;
   word-wrap: break-word;
 }
 
@@ -152,7 +161,7 @@ td {
 }
 
 button {
-  background-color: #270092;
+  background-color: #5477f6;
   text-align: center;
   color: white;
   padding: 10px 20px;
@@ -177,6 +186,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .form {
@@ -197,7 +207,7 @@ input[type=text], select {
 
 input[type=submit] {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #fc0926;
   color: white;
   padding: 14px;
   margin: 8px 0;
@@ -207,7 +217,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #a80114;
 }
 
 
