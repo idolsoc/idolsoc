@@ -332,4 +332,43 @@ function openLinks() {
     }
 }
 
+//members google sheet
+
+// Construct the URL for Google Sheets API v4
+const memsUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/Members?key=${apiKey}`;
+
+async function fetchMembers() {
+    try {
+        // Fetch data from Google Sheets API
+        const response = await fetch(memsUrl);
+        const data = await response.json();
+
+        // Extract rows from the data
+        const rows = data.values;
+
+        // Get the table body element
+        const tableBody = document.getElementById('members-sheet');
+
+        // Loop through the rows (starting from row 1 to skip headers)
+        for (let i = 1; i < rows?.length ?? 0; i++) {
+            const row = document.createElement('tr');
+
+            // Loop through each cell in the row and create a table cell for each
+            rows[i].forEach(cell => {
+                const cellElement = document.createElement('td');
+                //cellElement.textContent = cell;
+                cellElement.innerHTML = "<label for='member" + i + "'>" + cell + "</label><br/><input type='checkbox' id='member" + i + "' value='" + cell + "' autocomplete='off'/>";
+                row.appendChild(cellElement);
+            });
+
+            // Append the row to the table
+            tableBody.appendChild(row);
+        }
+    } catch (error) {
+        console.error('Error fetching members sheet data:', error);
+    }
+}
+
+// Call the function to fetch and display data
+document.addEventListener('DOMContentLoaded', fetchMembers);
 

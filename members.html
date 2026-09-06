@@ -20,17 +20,34 @@
         <div class="normal">
             
             <h2>choose members</h2>
-            <input type="checkbox" id="member1" value="Kai" autocomplete="off"/>
-            <label for="member1">Kai</label><br/>
-            <input type="checkbox" id="member2" value="Veronica" autocomplete="off"/>
-            <label for="member2">Veronica</label><br/>
-            <input type="checkbox" id="member3" value="Alex" autocomplete="off"/>
-            <label for="member3">Alex</label><br/>
-         
+
+            <table id="members-sheet">
+                <thead>
+                    <tr>
+                        <th>Members</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
 
             <input class="button" type="button" value="submit" id="submit" onclick="getMembers()"/>
 
             <input class="button" type="button" value="clear" id="clear" onclick="clearMembers()"/>
+        </div>
+
+        <center><button class="button" id="collapse" type="button" onclick="toggleForm()">add new member</button></center>
+
+
+        <div class="div-form" id="song-form">
+            <h3>add new member</h3>
+
+            <form action="https://api.sheetmonkey.io/form/PG6ApbAA1uv7yFCvJCKXZ" method="post">
+                <label>new member name: <input type="text" name="Member" required /></label>
+                <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+                <input type="hidden"name="x-sheetmonkey-insert-worksheet" value="Members"/>
+                <input type="submit" value="Submit" />
+            </form>
         </div>
 
         <script src="script.js"></script>
