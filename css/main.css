@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #adbbff;
+    background-color: #f1f1f1;
     background-repeat: repeat;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0%;
@@ -101,7 +101,7 @@ a:hover {
 
 .normal{
   border-style: solid;
-  border-color: #f1f1f1;
+  border-color: #adbbff;
   padding-left: 8px;
   padding-right: 8px;
   padding-bottom: 20px;
@@ -109,7 +109,7 @@ a:hover {
   margin: auto;
   text-align: center;
   display: block;
-  background-color: #819af4;
+  background-color: #f1f1f1;
   justify-content: center;
   animation: 2s both fadeInUp;
   @media only screen and (max-width: 600px) {
@@ -119,14 +119,14 @@ a:hover {
 
 .div-form {
   border-style: solid;
-  border-color: #f1f1f1;
+  border-color: #adbbff;
   padding-left: 8px;
   padding-right: 8px;
   padding-bottom: 20px;
   width: 50%;
   margin: auto;
   text-align: center;
-  background-color: #819af4;
+  background-color: #f1f1f1;
   animation: 2s both fadeInUp;
   @media only screen and (max-width: 600px) {
     width: 85%;
@@ -160,26 +160,26 @@ td {
   font-size: 16px;
 }
 
-button {
-  background-color: #5477f6;
+/* button {
+  background-color: #504ecc;
   text-align: center;
   color: #f1f1f1;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
+} */
 
 .button:hover {
-  background-color: #4b42ce71;
+  background-color: #819af4;
 }
 
 .button:focus {
-  background-color: #0b002a;
+  background-color: #da3a59;
 }
 
 .button {
-  background-color: #270092;
+  background-color: #504ecc;
   text-align: center;
   color: #f1f1f1;
   padding: 10px 20px;
@@ -187,11 +187,12 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 1%;
 }
 
 .form {
   border-radius: 5px;
-  background-color: #f1f1f1;
+  background-color: #adbbff;
   padding: 20px;
 }
 
@@ -200,7 +201,7 @@ input[type=text], select {
   padding: 12px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #f1f1f1;
+  border: 1px solid #adbbff;
   border-radius: 4px;
   box-sizing: border-box;
 }
