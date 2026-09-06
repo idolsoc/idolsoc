@@ -45,7 +45,7 @@ function getMembers() {
 
 function getSubstring(string, char1, char2) {
     return string.slice(
-        string.indexOf(char1) + 1,
+        string.indexOf(char1) + 2,
         string.lastIndexOf(char2),
     );
 };
@@ -147,14 +147,27 @@ function displayChoice() {
                 
                         let videoId = '';
                 
-                        if (songURL.textContent.indexOf('&') > -1) {
+                        if (songURL.textContent.includes('&')) 
+                        {
                             videoId = getSubstring(songURL.textContent, 'v=', '&');
+                            console.log(videoId);
                         }
-                        else if(songURL.textContent.includes("v=")) {
+                        else if(songURL.textContent.includes("v=")) 
+                        {
                             videoId = songURL.textContent.split('v=')[1];
                         }
-                        else{
-                            videoId = getSubstring(songURL.textContent, 'be/', '?');
+                        else if(songURL.textContent.includes("ab_channel"))
+                        {
+                            videoId = getSubstring(songURL.textContent, 'v=', '&ab')
+                        }
+                        else if(songURL.textContent.includes("&list"))
+                        {
+                            videoId = getSubstring(songURL.textContent, 'v=', '&list')
+                        }
+                        else
+                        {
+                            videoId = getSubstring(songURL.textContent, 'e/', '?');
+                            console.log(videoId);
                         }
                 
                         const thumbnailURL = `http://img.youtube.com/vi/${videoId}/0.jpg`;
@@ -234,8 +247,6 @@ function toggleForm() {
     }
 };
     
-
-
 
 function shuffle(array) {
 
