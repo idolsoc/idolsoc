@@ -1,7 +1,12 @@
+@font-face {
+  font-family: 'Starborn';
+  src: url(css\Starborn.otf);
+}
+
 body {
     background-color: #03013e;
     background-repeat: repeat;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Starborn';
     margin: 0%;
 }
 
