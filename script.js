@@ -1,19 +1,30 @@
 membersSelected = new Array();
 shuffledMems = new Array();
 
+const tempTable = document.getElementById("member-table");
+var doc = document.getElementById("member-table");
 
 function loadPage() {
+   
+    console.log("loading page");
 
-    const memTab = document.getElementById("member-table");
-
-    if (sessionStorage.getItem('page') === null) {
-        console.log("No page stored in sessionStorage");
+    if (sessionStorage.getItem('tempTable') === null) {
+        console.log("no page stored in session storage");
     }
     else {
-        memTab = sessionStorage.getItem('page');
+        doc = JSON.parse(sessionStorage.getItem('tempTable'));
+        console.log("page loaded from session storage");
     }
 
-    console.log("Page Loaded");
+    console.log("page loaded");
+}
+
+function savePage() {
+
+    setInterval(function () {
+        sessionStorage.setItem("tempTable", JSON.stringify(doc));
+        console.log("page saved");
+    }, 5000);
 }
 
 function getMembers() {
@@ -278,8 +289,7 @@ let currentInt = 0;
 
 function getSong() {
 
-    const memTab = document.getElementById("member-table");    
-    sessionStorage.setItem('page', JSON.stringify(memTab));
+    const memTab = document.getElementById("member-table");   
 
     const searchInput = document.getElementById('input');
     const songName = document.getElementById('song-name');

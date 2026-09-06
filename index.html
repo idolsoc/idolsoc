@@ -8,11 +8,11 @@
         <link rel="stylesheet" href="css/main.css" />
     </head>
 
-    <body  onload="loadPage()">
+    <body onload="loadPage(); savePage();">
         <div class="navbar">
             <a href="index.html" class="navbar">home</a>
             <a href="members.html" class="navbar">members</a>
-            <a href="spreadsheet.html" class="navbar">songs</a>
+            <a href="spreadsheet.html" target="__blank" class="navbar">songs</a>
 
         </div>
 
@@ -34,7 +34,8 @@
 
         <div class="normal">
 
-            <button class="button" type="button" onclick="randomizeMembers()">show members</button>
+            <button class="button" type="button" onclick="randomizeMembers()">input members</button>
+            <button class="button" type="button" onclick="openLinks()">open links</button>
 
             <table id="member-table">
             <thead>
@@ -47,7 +48,6 @@
             </tbody>
         </table>
 
-        <button class="button" type="button" onclick="openLinks()">open links</button>
         
         </div>
 
