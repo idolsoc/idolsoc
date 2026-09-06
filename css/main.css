@@ -19,7 +19,7 @@ p {
 }
 
 h1 {
-  color: #fa334a;
+  color: #d93858;
   text-align: center;
   padding-top: 5px;
   font-size: 270%;
@@ -29,12 +29,12 @@ h1 {
 }
 
 h2 {
-  color: #f92039;
+  color: #d93858;
   text-align: center;
 }
 
 h3 {
-  color: #fa334a;
+  color: #d93858;
   text-align: center;
   font-weight: bold;
 }
@@ -54,7 +54,7 @@ ul {
 }
 
 a {
-  color: #8a323c;
+  color: #160000;
   display: inline-block;
   align-items: center;
   padding-bottom: 1%;
@@ -72,7 +72,7 @@ a {
 a.navbar {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #f1f1f1;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -83,13 +83,13 @@ a.navbar {
 }
 
 a.navbar:hover {
-  color: #ffffff;
+  color: #f1f1f1;
   background-color: #4b42ce71;
 }
 
 
 a:hover {
-  color:#819af4;
+  color:#d93858;
 }
 
 
@@ -101,7 +101,7 @@ a:hover {
 
 .normal{
   border-style: solid;
-  border-color: #ffffff;
+  border-color: #f1f1f1;
   padding-left: 8px;
   padding-right: 8px;
   padding-bottom: 20px;
@@ -119,7 +119,7 @@ a:hover {
 
 .div-form {
   border-style: solid;
-  border-color: #ffffff;
+  border-color: #f1f1f1;
   padding-left: 8px;
   padding-right: 8px;
   padding-bottom: 20px;
@@ -163,7 +163,7 @@ td {
 button {
   background-color: #5477f6;
   text-align: center;
-  color: white;
+  color: #f1f1f1;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -181,7 +181,7 @@ button {
 .button {
   background-color: #270092;
   text-align: center;
-  color: white;
+  color: #f1f1f1;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -191,7 +191,7 @@ button {
 
 .form {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #f1f1f1;
   padding: 20px;
 }
 
@@ -200,15 +200,15 @@ input[type=text], select {
   padding: 12px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid #f1f1f1;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
 input[type=submit] {
   width: 100%;
-  background-color: #fc0926;
-  color: white;
+  background-color: #d93858;
+  color: #f1f1f1;
   padding: 14px;
   margin: 8px 0;
   border: none;
