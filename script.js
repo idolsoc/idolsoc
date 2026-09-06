@@ -91,9 +91,6 @@ async function fetchGoogleSheetData() {
     }
 }
 
-// Call the function to fetch and display data
-document.addEventListener('DOMContentLoaded', fetchGoogleSheetData);
-
 
 function searchTable() {
     const searchInput = document.getElementById('search-input');
@@ -369,6 +366,12 @@ async function fetchMembers() {
     }
 }
 
-// Call the function to fetch and display data
-document.addEventListener('DOMContentLoaded', fetchMembers);
+if(document.title === "members") {
+    // Call the function to fetch and display data
+    document.addEventListener('DOMContentLoaded', fetchMembers);
+}
+else if(document.title === "song archive") {
+    // Call the function to fetch and display data
+    document.addEventListener('DOMContentLoaded', fetchGoogleSheetData);
+}
 
