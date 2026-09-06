@@ -222,5 +222,32 @@ input[type=submit]:hover {
   background-color: #a80114;
 }
 
+/*** Works on common browsers ***/
+::selection {
+    background-color: #d93858;
+    color: #f1f1f1;
+}
 
+/*** Mozilla based browsers ***/
+::-moz-selection {
+    background-color: #d93858;
+    color: #f1f1f1;
+}
+
+/***For Other Browsers ***/
+::-o-selection {
+    background-color: #d93858;
+    color: #f1f1f1;
+}
+
+::-ms-selection {
+    background-color: #d93858;
+    color: #f1f1f1;
+}
+
+/*** For Webkit ***/
+::-webkit-selection {
+    background-color: #d93858;
+    color: #f1f1f1;
+}
 
