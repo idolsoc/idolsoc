@@ -113,17 +113,19 @@ function searchTable() {
 
 function displayChoice() {
 
+    
     const songName = document.getElementById('song-name');
     const songURL = document.getElementById('song-url');
     const searchInput = document.getElementById('input');
-
+    
     if (searchInput != null) {
         const searchTable = document.getElementById('sheet');
         const rows = searchTable.querySelectorAll('tr');
-
+        
+        
         searchInput.addEventListener('input', function (e) {
             const q = e.target.value.toLowerCase();
-
+            
             rows.forEach(row => {
                 const cells = Array.from(row.querySelectorAll('td'));
                 const matchString = cells.map((n) => n.textContent.toLowerCase()).join(' ');
@@ -131,7 +133,7 @@ function displayChoice() {
                 row.classList.toggle("hide", !isMatch);
             });
         });
-
+        
         for (var i = 0, row; row = searchTable.rows[i]; i++) {
             if (row.cells[1].textContent.toLowerCase() === searchInput.value.toLowerCase()) {
                 songName.textContent = row.cells[1].textContent;
@@ -140,26 +142,30 @@ function displayChoice() {
                     if (j === 3) {
                         songURL.innerHTML = "<a href='" + row.cells[3].textContent + "'>" + row.cells[3].textContent + "</a>";
                         console.log(row.cells[3].textContent);
+
+                        const thumbnailContainer = document.getElementById('song-container');
+                
+                        let videoId = '';
+                
+                        if (songURL.textContent.indexOf('&') > -1) {
+                            videoId = getSubstring(songURL.textContent, 'v=', '&');
+                        }
+                        else if(songURL.textContent.includes("v=")) {
+                            videoId = songURL.textContent.split('v=')[1];
+                        }
+                        else{
+                            videoId = getSubstring(songURL.textContent, 'be/', '?');
+                        }
+                
+                        const thumbnailURL = `http://img.youtube.com/vi/${videoId}/0.jpg`;
+                
+                        document.getElementById('song-image').src = thumbnailURL;
+                        document.getElementById('song-image').style.display = 'block';
                     }
                 }
             }
         }
 
-        const thumbnailContainer = document.getElementById('song-container');
-
-        let videoId = '';
-
-        if (songURL.textContent.indexOf('&') > -1) {
-            videoId = getSubstring(songURL.textContent, 'v=', '&');
-        }
-        else {
-            videoId = songURL.textContent.split('v=')[1];
-        }
-
-        const thumbnailURL = `http://img.youtube.com/vi/${videoId}/0.jpg`;
-
-        document.getElementById('song-image').src = thumbnailURL;
-        document.getElementById('song-image').style.display = 'block';
     };
 
 }
@@ -370,7 +376,7 @@ if(document.title === "members") {
     // Call the function to fetch and display data
     document.addEventListener('DOMContentLoaded', fetchMembers);
 }
-else if(document.title === "song archive") {
+else if(document.title === "song archive" || "index") {
     // Call the function to fetch and display data
     document.addEventListener('DOMContentLoaded', fetchGoogleSheetData);
 }
